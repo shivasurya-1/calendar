@@ -125,7 +125,7 @@ const App: React.FC = () => {
             </button>
           </form>
           <div className="mt-8 pt-6 border-t border-slate-100 text-center">
-            <p className="text-xs text-slate-400 font-medium">admin / password123</p>
+            <p className="text-xs text-slate-400 font-medium">Hint: admin / password123</p>
           </div>
         </div>
       </div>
@@ -197,7 +197,7 @@ const App: React.FC = () => {
                   <p className="text-slate-500 font-medium">Managing constituent outreach for <span className="text-indigo-600 font-bold">{selectedDate.toLocaleDateString(undefined, { month: 'long', day: 'numeric', year: 'numeric' })}</span></p>
                 </div>
                 <button 
-                  onClick={() => openAddModal(TIME_SLOTS[9].label)} // Defaults to 09:00 AM when clicking top right
+                  onClick={() => openAddModal(TIME_SLOTS[9].label)} 
                   className="flex items-center justify-center gap-2 bg-indigo-600 text-white px-6 py-3 rounded-xl font-bold hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4"/></svg>
@@ -206,7 +206,6 @@ const App: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                {/* Interactive Calendar */}
                 <div className="lg:col-span-4 space-y-6">
                   <Calendar 
                     selectedDate={selectedDate} 
@@ -227,7 +226,6 @@ const App: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Schedule Section */}
                 <div className="lg:col-span-8 bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
                   <div className="px-6 py-4 border-b border-slate-100 bg-slate-50/50">
                     <h3 className="text-sm font-bold text-slate-700">Timeline for {selectedDate.toLocaleDateString(undefined, { weekday: 'long' })}</h3>
@@ -256,7 +254,6 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Appointment Modal */}
       <AppointmentModal 
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
